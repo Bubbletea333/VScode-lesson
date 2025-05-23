@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(140, 178, 232);
+    font-family: fantasy;
+    margin: auto;
+}
+
+h1{
+   font-family: cursive;
+    color:  rgb(220, 20, 20);
+    text-align: center; 
+}
+
+h2{
+    font-family: cursive;
+    color: rgb(220, 20, 20);
+    text-align: center;
+}
+
+p{
+    font-family: monospace;
+    color: rgb(72, 10, 10);
+    text-align: justify;
+    font-size: large;
+}
