@@ -1,5 +1,5 @@
-height=(input("what is your height in centimeters= "))
-weight=(input("what is your weight in kilograms= "))
+height=int(input("what is your height in centimeters= "))
+weight=int(input("what is your weight in kilograms= "))
 
 height=(height/100)
 bmi=(weight/(height*height))
