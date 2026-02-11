@@ -15,24 +15,31 @@ while keep_alive == True:
 
     print("\nWhat would Sparkle do?")
     print("1.Eat 2.Sleep 3.Play")
-    pick=(input("pick 1 , 2 or 3 :"))
+    pick=str(input("pick 1 , 2 or 3 :"))#Python consideres the variable value as a string IF we dont type any Data types
 
-    if pick == 1:
+    if pick == "1":
         hunger=hunger+2
         print("Sparkle is eating now")
 
-    elif pick == 2:
+    elif pick == "2":
         energy=energy+2
         happiness=happiness-1
         print ("Sparkle is sleeping, shh be quiet")
 
-    elif pick == 3:
+    elif pick == "3":
         energy=energy-2
         hunger=hunger-1
         happiness=happiness+2
         print("Sparkle played catch")
-    
-    else:
-        print(input("please write 1 2 or 3: "))
 
-        #display the status
+    elif energy <= 0 or hunger <= 0 or happiness <= 0:
+        keep_alive==False
+        print("oh no poor Sparkle")
+        break
+
+    else:
+        print(str(input("please write 1 2 or 3: ")))
+
+if keep_alive == False:
+    print("oh nooooooooo...... (っ °Д °;)っSparkle (┬┬﹏┬┬)")
+        #do check how to break the loop
