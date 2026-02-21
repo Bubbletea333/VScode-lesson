@@ -16,7 +16,7 @@ while keep_alive == True:
     
 
     if energy <= 0 or hunger <= 0 or happiness <= 0:#Checking for game over
-        keep_alive==False
+        keep_alive=False
         print("oh no poor Sparkle（；´д｀）ゞ")
         print("GAME OVER(┬┬﹏┬┬)")
         break
@@ -25,7 +25,11 @@ while keep_alive == True:
     else:
         print("\nWhat would Sparkle do?")
         print("1.Eat 2.Sleep 3.Play")
-        pick=str(input("pick 1 , 2 or 3 :"))#Python consideres the variable value as a string IF we dont type any Data types
+        try:
+            pick=input("pick 1 , 2 or 3 :").strip()#Python consideres the variable value as a string IF we dont type any Data types
+        except (EOFError, KeyboardInterrupt):
+            print("No input detected — continuing the game.")
+            continue
         
         if pick == "1":
             hunger=hunger+2
@@ -45,10 +49,10 @@ while keep_alive == True:
             if energy > 10:
                 energy= 10
             
-            elif hunger > 10:
+            if hunger > 10:
                 hunger= 10
 
-            elif happiness > 10:
+            if happiness > 10:
                 happiness= 10
 
         else:
