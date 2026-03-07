@@ -9,13 +9,13 @@ print("Your mission is to survive 50 days and thrive in space!")
 
 while mission_active:
     days = days+1
-    print(f"--day {days}--")
+    print(f"\n--day {days}--")
     print(f"Coins={coins}🪙")
     print(f"Air={air}")
     print(f"food={food}🍔🍟🍱🥢")
     
     if air <= 0 or food <= 0:#Checking for game over        
-        print("oh no your colony is in danger!😵😨")
+        print("\noh no your colony is in danger!😵😨")
         mission_active=False
 
     elif days == 50:        
@@ -29,18 +29,20 @@ while mission_active:
 
         if pick == "1":
             air=air+2
-            food=food-2
-            print("you colony got air")
+            food=food-1
+            coins=coins-5
+            print("your colony got air")
 
         elif pick == "2":
-            food=food-2
-            air=air-2
+            food=food+2
+            air=air-1
+            coins=coins-5
             print ("your colony ate food")
 
         elif pick == "3":
             coins=coins+5
-            food=food-2
-            air=air-2
+            food=food-1
+            air=air-1
             print("you get 5 coins")
 
         else:
