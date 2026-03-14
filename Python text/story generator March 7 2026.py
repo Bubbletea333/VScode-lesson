@@ -6,3 +6,6 @@ when=["yesterday","last week","last year","last decade","an hour ago"]
 action=["stole burgers","talked to the phone","read a book","played with friends","bought toys"]
 residence=["India","America","Antartica","Russia","South Korea"]
 print(random.choice(when)+', there was '+ random.choice(animals)+' named '+ random.choice(names)+' that lived in '+ random.choice(residence)+', it went to the '+ random.choice(places)+' and '+random.choice(action)+'.')
+#list is like a variable but inside it has many things
+#if you need to use a list you should use[] 
+#how to seperate it you need to use a , then you add
