@@ -22,36 +22,36 @@ while player_score < 3 and computer_score < 3:
         print(f"your enemy choose {computer}")
         if computer=="paper":
             computer_score = computer_score+1
-            print("your enemy won😨")
+            print("your enemy won")
         if computer=="scissors":
             player_score = player_score+1
-            print("you won🌟🌟")
+            print("you won")
         if computer=="rock":
-            print("it's a tie😥")
+            print("it's a tie")
 
     elif player =="paper":
         computer=(random.choice(choices))
         print(f"your enemy choose {computer}")
         if computer=="scissors":
             computer_score = computer_score+1
-            print("your enemy won😨")
+            print("your enemy won")
         if computer=="rock":
             player_score = player_score+1
-            print("you won🌟🌟")
+            print("you won")
         if computer=="paper":
-            print("it's a tie😥")
+            print("it's a tie")
 
     elif player =="scissors":
         computer=(random.choice(choices))
         print(f"your enemy choose {computer}")
         if computer=="rock":
             computer_score = computer_score+1
-            print("your enemy won😨")
+            print("your enemy won")
         if computer=="paper":
             player_score = player_score+1
-            print("you won🌟🌟")
+            print("you won")
         if computer=="scissors":
-            print("it's a tie😥")
+            print("it's a tie")
     else:
         print("please write it correctly😡")
 
