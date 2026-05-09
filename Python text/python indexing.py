@@ -35,3 +35,18 @@ fruits = ["apple", "banana", "orange"]
 #answer=
 fruits[1] = "mango"
 print(fruits)
+
+#🔴 Level 3 – Challenge
+#Create a list of 4 games.
+#Print:
+#second game
+#last game
+
+games=["Pacman","pokemon go","minecraft","roblox"]
+print(games[1])
+print(games[-1])
+#Given:
+scores = [50, 60, 70, 80]
+#Change the first score to 100
+scores[0]=100
+print(scores)
