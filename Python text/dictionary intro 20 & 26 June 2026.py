@@ -191,11 +191,10 @@ print(character.values())
 #Example
 #Loop through the keys and values of all nested dictionaries:
 #--------------------------------------
-#for x, obj in myfamily.items():
-#  print(x)
-
-#  for y in obj:
-#    print(y + ':', obj[y])
+#for x, obj in myfamily.items(): check your dictionary values one by one then grabs each values to save it in "x" after that it bundles them to "obj"
+#  print(x) print the values
+#  for y in obj: rename obj into y
+#    print(y + ':', obj[y]) it prints the keys then the values
 
 #Dictionary Methods
 #Python has a set of built-in methods that you can use on dictionaries.
