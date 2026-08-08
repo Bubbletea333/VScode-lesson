@@ -1,6 +1,6 @@
 import random
 
-choices=["rock🗿","paper📄","scissors✂️"]
+choices=["rock","paper","scissors"]
 computer=0
 player=0
 player_score=0
@@ -12,7 +12,7 @@ print("\nyou need to win 3 points so you can win")
 print("The loser needs to do something embarrassing for 30 seconds")
 print("\nso let's the show begin")
 
-while player_score < 3 and computer_score < 3:
+while player_score < winning_score and computer_score < winning_score:
     print(f"\nplayer score = {player_score}   enemy score = {computer_score}")
     print("\nwhat will you pick")
     player=(input("rock paper or scissors= ")).lower()
@@ -55,4 +55,8 @@ while player_score < 3 and computer_score < 3:
     else:
         print("please write it correctly😡")
 
-    
+if player_score == winning_score:
+    print("\n🏆 Congratulations! You are the champion!")
+
+else:
+    print("\n💻 The computer wins the championship!")
