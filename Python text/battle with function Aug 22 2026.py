@@ -45,9 +45,9 @@ def intermediate():
         enemy_hp-=65
         print(f"enemy's hp={enemy_hp}")
     elif choose4 =="lightning bolt":
-            print("you used your lightning bolt power")
-            enemy_hp-=40
-            print(f"enemy's hp={enemy_hp}")
+        print("you used your lightning bolt power")
+        enemy_hp-=40
+        print(f"enemy's hp={enemy_hp}")
     else:
         print("it is not listed there")
         print(f"enemy choose={enemy_choose} and it hits you")
