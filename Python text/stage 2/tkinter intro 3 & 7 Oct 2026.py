@@ -1,17 +1,17 @@
-#import tkinter as tk
+import tkinter as tk
 
-#root = tk.Tk()
+root = tk.Tk()
 #root is the window 
 
 #below are the widgets
-#label = tk.Label(root, text="Bob is here say hi (*/ω＼*)")
-#label.pack()
+label = tk.Label(root, text="Bob is here say hi (*/ω＼*)")
+label.pack()
 # tk.Label creates the label
-# root in line 6 is putting the label in its window
-#button=tk.Button(root, text="say hi", width=25, height=5, command=label.destroy)
-#button.pack()
-#button=tk.Button(root, text="ignore it", width=25, height=5, command=root.destroy)
-#button.pack()
+# root in line 7 is putting the label in its window
+button1=tk.Button(root, text="say hi", width=25, height=5, command=label.destroy)
+button1.pack()
+button2=tk.Button(root, text="ignore it", width=25, height=5, command=root.destroy)
+button2.pack()
 # tk.Button creates the button
 # root in line 11 and 13 is putting the button in its window
 # the width and height controls the size of the widget
@@ -37,6 +37,7 @@ var2 = tk.IntVar()
 
 tk.Checkbutton(root, text="Male", variable=var1).grid(row=0, sticky=tk.W)
 tk.Checkbutton(root, text="Female", variable=var2).grid(row=1, sticky=tk.W)
+
 
 v= tk.IntVar()#it is not working
 

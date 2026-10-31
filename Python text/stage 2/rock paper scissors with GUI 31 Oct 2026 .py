@@ -1,0 +1,91 @@
+import random
+import tkinter as tk
+
+choices=["rock","paper","scissors"]
+computer=0
+player=0
+player_score=0
+computer_score=0
+winning_score=3
+def rock():
+    computer=(random.choice(choices))
+    print(f"your enemy choose {computer}")
+    if computer=="paper":
+        global computer_score 
+        computer_score += 1
+        print("your enemy won")
+    if computer=="scissors":
+        global player_score 
+        player_score += 1
+        print("you won")
+    if computer=="rock":
+        print("It's a tie")
+
+def paper():
+    computer=(random.choice(choices))
+    print(f"your enemy choose {computer}")
+    if computer=="scissors":
+        global computer_score 
+        computer_score += 1
+        print("your enemy won")
+    if computer=="rock":
+        global player_score 
+        player_score += 1
+        print("you won")
+    if computer=="paper":
+        print("it's a tie")
+
+def scissors():
+    computer=(random.choice(choices))
+    print(f"your enemy choose {computer}")
+    if computer=="rock":
+        global computer_score 
+        computer_score += 1
+        print("your enemy won")
+    if computer=="paper":
+        global player_score 
+        player_score += 1
+        print("you won")
+    if computer=="scissors":
+        print("it's a tie")
+
+print("welcome to the grand championship of Rock Paper Scissors🗿📄✂️")
+print("\nyou need to win 3 points so you can win")
+print("The loser needs to do something embarrassing for 30 seconds")
+print("\nso let's the show begin")
+
+while player_score < winning_score and computer_score < winning_score:
+    print(f"\nplayer score = {player_score}   enemy score = {computer_score}")
+    print("\nwhat will you pick")
+    player=(input("rock paper or scissors= ")).lower()
+
+    if player =="rock":
+        rock()
+        
+    elif player =="paper":
+        paper()
+    elif player =="scissors":
+        scissors()
+    else:
+        print("please write it correctly😡")
+
+if player_score == winning_score:
+    print("\n🏆 Congratulations! You are the champion!")
+
+else:
+    print("\n The Enemy wins the championship!")
+
+root = tk.Tk()
+root.title("Rock Paper Scissors game 🗿📄✂️")
+
+label1 = tk.Label(root, text="grand championship of Rock Paper Scissors")
+label1.pack()
+
+button1=tk.Button(root, text="Rock", width=25, height=5, command=lambda :play("rock"))
+button1.pack()
+button2=tk.Button(root, text="Paper", width=25, height=5, command=lambda :play("paper"))
+button2.pack()
+button3=tk.Button(root, text="Scissors", width=25, height=5, command=lambda :play("scissors"))
+button3.pack()
+
+root.mainloop()
