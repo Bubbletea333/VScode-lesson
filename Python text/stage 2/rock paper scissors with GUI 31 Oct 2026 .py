@@ -51,29 +51,34 @@ def scissors():
 
 print("welcome to the grand championship of Rock Paper Scissors🗿📄✂️")
 print("\nyou need to win 3 points so you can win")
-print("The loser needs to do something embarrassing for 30 seconds")
 print("\nso let's the show begin")
 
-while player_score < winning_score and computer_score < winning_score:
-    print(f"\nplayer score = {player_score}   enemy score = {computer_score}")
-    print("\nwhat will you pick")
-    player=(input("rock paper or scissors= ")).lower()
+def play():
+    
+    while player_score < winning_score and computer_score < winning_score:
+        print(f"\nplayer score = {player_score}   enemy score = {computer_score}")
+        print("\nwhat will you pick")
+        player=(input("rock paper or scissors= ")).lower()
 
-    if player =="rock":
-        rock()
+        if player =="rock":
+            rock()
         
-    elif player =="paper":
-        paper()
-    elif player =="scissors":
-        scissors()
+        elif player =="paper":
+            paper()
+        elif player =="scissors":
+            scissors()
+        else:
+            print("please write it correctly😡")
+
+    if player_score == winning_score:
+        print("\n🏆 Congratulations! You are the champion!")
+
     else:
-        print("please write it correctly😡")
+        print("\n The Enemy wins the championship!")
 
-if player_score == winning_score:
-    print("\n🏆 Congratulations! You are the champion!")
-
-else:
-    print("\n The Enemy wins the championship!")
+    label2.config(text=f"enemy chose= {computer}")
+    label3.config(text=f"you ")
+    label4.config(text=f"enemy chose= {computer}")
 
 root = tk.Tk()
 root.title("Rock Paper Scissors game 🗿📄✂️")
@@ -81,11 +86,18 @@ root.title("Rock Paper Scissors game 🗿📄✂️")
 label1 = tk.Label(root, text="grand championship of Rock Paper Scissors")
 label1.pack()
 
-button1=tk.Button(root, text="Rock", width=25, height=5, command=lambda :play("rock"))
-button1.pack()
-button2=tk.Button(root, text="Paper", width=25, height=5, command=lambda :play("paper"))
-button2.pack()
-button3=tk.Button(root, text="Scissors", width=25, height=5, command=lambda :play("scissors"))
-button3.pack()
+button1=tk.Button(root, text="Rock", width=20, height=2, command=lambda :play())
+button1.pack(pady=5)#pady is for adding gaps between other widgets below it
+button2=tk.Button(root, text="Paper", width=20, height=2, command=lambda :play())
+button2.pack(pady=5)
+button3=tk.Button(root, text="Scissors", width=20, height=2, command=lambda :play())
+button3.pack(pady=5)
+
+label2 = tk.Label(root, text="")#This is to show what the enemy chose
+label2.pack()
+label3 = tk.Label(root, text="")#This is to show who won
+label3.pack()
+label4 = tk.Label(root, text="")#This is to show the score
+label4.pack()
 
 root.mainloop()
