@@ -7,6 +7,8 @@ player=0
 player_score=0
 computer_score=0
 winning_score=3
+winner=""
+
 def rock():
     computer=(random.choice(choices))
     print(f"your enemy choose {computer}")
@@ -71,14 +73,16 @@ def play():
             print("please write it correctly😡")
 
     if player_score == winning_score:
+        winner = "player"
         print("\n🏆 Congratulations! You are the champion!")
 
     else:
+        winner = "enemy"
         print("\n The Enemy wins the championship!")
 
     label2.config(text=f"enemy chose= {computer}")
-    label3.config(text=f"you ")
-    label4.config(text=f"enemy chose= {computer}")
+    label3.config(text=f"{winner} has won the championship!!!🥳")
+    label4.config(text=f"Player score= {player_score} Enemy score= {computer_score}")
 
 root = tk.Tk()
 root.title("Rock Paper Scissors game 🗿📄✂️")
@@ -101,3 +105,9 @@ label4 = tk.Label(root, text="")#This is to show the score
 label4.pack()
 
 root.mainloop()
+
+#The **Rock** button does run `play()`, but `play()` doesn’t use the button choice. All three buttons call the same function (`button setup`), and `play()` asks for a choice using `input()` in the terminal (`play function`). Since that happens inside a Tkinter button callback, it blocks the GUI while waiting for terminal input, so it can look like the button did nothing.
+
+#The labels are updated only **after** the loop finishes—when someone reaches 3 points (`label updates`). Also, the `rock()`, `paper()`, and `scissors()` functions aren’t connected to the buttons; the button commands call only `play()`.
+
+#To make this work as a GUI, have each button pass its choice to a function that plays **one round** and updates the labels. Avoid `input()` and the long `while` loop in the button callback. One more issue: the strategy functions’ `computer` variables are local, so the label currently reads the unchanged global value `0`, not the computer’s choice.
